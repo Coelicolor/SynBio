@@ -109,7 +109,7 @@
                 <div>
                     <h2 class="text-3xl font-bold text-cyan-400 mb-4">Our Mission</h2>
                     <p class="text-gray-300 mb-4">
-                        The ThaiSyn Bio Grand Challenge is a national initiative to catalyze innovation in synthetic biology to solve Thailand's most critical health and environmental problems. We aim to foster collaboration, cultivate talent, and accelerate the transition of cutting-edge research from the lab to real-world impact.
+                        The Thai SynBio Grand Challenge is a national initiative to catalyze innovation in synthetic biology to solve Thailand's most critical health and environmental problems. We aim to foster collaboration, cultivate talent, and accelerate the transition of cutting-edge research from the lab to real-world impact.
                     </p>
                      <p class="text-gray-300">
                         This competition invites multidisciplinary teams to design, build, and test novel biological circuits and systems. We believe that by bringing together the brightest minds, we can unlock the potential of synthetic biology to create a better tomorrow.
@@ -282,17 +282,17 @@
                     // --- Send Confirmation Email ---
                     var userEmail = payload.email;
                     var teamName = payload.teamName;
-                    var subject = "Registration Confirmation - ThaiSyn Bio Grand Challenge 2025";
+                    var subject = "Registration Confirmation - Thai SynBio Grand Challenge 2025";
                     var loginUrl = "https://coelicolor.github.io/SynBio/#login"; 
                     
                     var body = "Dear " + teamName + ",\n\n" +
-                               "Thank you for registering for the ThaiSyn Bio Grand Challenge 2025!\n\n" +
+                               "Thank you for registering for the Thai SynBio Grand Challenge 2025!\n\n" +
                                "Your registration has been confirmed.\n\n" +
                                "You can now log in to the attendee portal to upload your sequences:\n" +
                                loginUrl + "\n\n" +
                                "We look forward to your participation.\n\n" +
                                "Sincerely,\n" +
-                               "The ThaiSyn Bio Grand Challenge Team";
+                               "The Thai SynBio Grand Challenge Team";
 
                     MailApp.sendEmail(userEmail, subject, body);
                     
