@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThaiSyn Bio Grand Challenge 2025</title>
+    <title>Thai SynBio Grand Challenge 2025</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -79,7 +79,7 @@
                     <a href="#" class="hover:text-white">LinkedIn</a>
                     <a href="#" class="hover:text-white">GitHub</a>
                 </div>
-                <p>&copy; 2025 ThaiSyn Bio Grand Challenge. All rights reserved.</p>
+                <p>&copy; 2025 Thai SynBio Grand Challenge. All rights reserved.</p>
                 <p class="text-sm mt-2">Hosted on GitHub Pages</p>
             </div>
         </footer>
@@ -90,7 +90,7 @@
     <template id="home-page">
         <div class="hero-bg rounded-lg p-8 md:p-16 text-center animate-fade-in">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">ThaiSyn Bio Grand Challenge 2025</h1>
-            <p class="text-lg md:text-2xl text-cyan-300 mb-8 max-w-3xl mx-auto">Innovating for a Healthier Future: A National Challenge in Synthetic Biology</p>
+            <p class="text-lg md:text-2xl text-cyan-300 mb-8 max-w-3xl mx-auto">Innovating for a Sustainable Future: A National Challenge in Synthetic Biology</p>
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
                  <button class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105" onclick="navigateTo('register')">Join the Challenge</button>
                  <button class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105" onclick="navigateTo('login')">Attendee Login</button>
@@ -244,17 +244,19 @@
     <script>
         // --- Google Sheets & Drive Integration ---
         /*
-            // UPDATED GOOGLE APPS SCRIPT - With Email Confirmation
+            // FINAL UNIFIED GOOGLE APPS SCRIPT - Handles Registration, Uploads, & CORS
             function doPost(e) {
               var lock = LockService.getScriptLock();
               lock.waitLock(30000); 
               
               try {
-                if (e.parameter.action == "upload") {
-                    // File upload logic
-                    var data = JSON.parse(e.postData.contents);
-                    var fileData = Utilities.base64Decode(data.file.split(',')[1]);
-                    var blob = Utilities.newBlob(fileData, data.mimeType, data.fileName);
+                var payload = JSON.parse(e.postData.contents);
+
+                if (payload.action === "upload") {
+                    // --- File Upload Logic ---
+                    var fileData = Utilities.base64Decode(payload.file.split(',')[1]);
+                    var blob = Utilities.newBlob(fileData, payload.mimeType, payload.fileName);
+                    
                     var folder = DriveApp.getFolderById("1o2QFA-HzSQ6dALl8_4ZX1h2ucmsm49_v");
                     var file = folder.createFile(blob);
                     
@@ -262,8 +264,8 @@
                       .createTextOutput(JSON.stringify({ "result": "success", "fileUrl": file.getUrl() }))
                       .setMimeType(ContentService.MimeType.JSON);
 
-                } else {
-                    // Registration logic
+                } else if (payload.action === "register") {
+                    // --- Registration Logic ---
                     var doc = SpreadsheetApp.openById("1nUrADjz3L3jKRrZy-4fKls15DcdbwB0Qy69MpKH24v8");
                     var sheetName = "Registrations";
                     var sheet = doc.getSheetByName(sheetName);
@@ -273,19 +275,14 @@
                       sheet.appendRow(["Timestamp", "teamName", "email", "affiliation", "passwordHash"]);
                     }
                     
-                    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
-                    var newRow = headers.map(function(header) {
-                      return header === "Timestamp" ? new Date() : e.parameter[header];
-                    });
-                    
+                    // Note: We are now using payload properties instead of e.parameter
+                    var newRow = [new Date(), payload.teamName, payload.email, payload.affiliation, payload.passwordHash];
                     sheet.appendRow(newRow);
 
                     // --- Send Confirmation Email ---
-                    var userEmail = e.parameter.email;
-                    var teamName = e.parameter.teamName;
+                    var userEmail = payload.email;
+                    var teamName = payload.teamName;
                     var subject = "Registration Confirmation - ThaiSyn Bio Grand Challenge 2025";
-                    
-                    // The live website URL provided by the user
                     var loginUrl = "https://coelicolor.github.io/SynBio/#login"; 
                     
                     var body = "Dear " + teamName + ",\n\n" +
@@ -298,12 +295,14 @@
                                "The ThaiSyn Bio Grand Challenge Team";
 
                     MailApp.sendEmail(userEmail, subject, body);
-                    // --- End Email ---
                     
                     return ContentService
                       .createTextOutput(JSON.stringify({ "result": "success" }))
                       .setMimeType(ContentService.MimeType.JSON);
+                } else {
+                  throw new Error("Invalid action specified in payload.");
                 }
+
               } catch (err) {
                 return ContentService
                   .createTextOutput(JSON.stringify({ "result": "error", "error": { "message": err.message, "stack": err.stack } }))
@@ -443,9 +442,7 @@
                 try {
                     const response = await fetch(GOOGLE_SCRIPT_URL, {
                         method: 'POST',
-                        headers: {
-                          'Content-Type': 'application/json',
-                        },
+                        // No 'Content-Type' header needed, as we send a raw string.
                         body: JSON.stringify(payload)
                     });
 
@@ -468,7 +465,7 @@
             };
         }
         
-        // --- REGISTRATION LOGIC ---
+        // --- REGISTRATION LOGIC (CORS FIX) ---
         async function handleRegistration(event) {
             event.preventDefault();
             const form = event.target;
@@ -479,13 +476,22 @@
             button.textContent = 'Submitting...';
             messageEl.className = 'text-center mt-4';
 
-            const submissionFormData = new FormData(form);
-            submissionFormData.append('passwordHash', btoa(submissionFormData.get('password')));
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            const payload = {
+                action: "register",
+                teamName: data.teamName,
+                email: data.email,
+                affiliation: data.affiliation,
+                passwordHash: btoa(data.password)
+            };
             
             try {
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    body: submissionFormData,
+                    // Sending as a raw string to avoid preflight/CORS issues. The script will parse it.
+                    body: JSON.stringify(payload), 
                 });
                 
                 const result = await response.json();
@@ -493,7 +499,7 @@
                 if (result.result === 'success') {
                     messageEl.textContent = 'Registration successful! A confirmation email has been sent.';
                     messageEl.classList.add('text-green-400');
-                    const data = Object.fromEntries(submissionFormData.entries());
+                    
                     const userDataForStorage = {
                         teamName: data.teamName,
                         email: data.email,
@@ -509,7 +515,7 @@
                     throw new Error(errorDetail || 'An unknown error occurred from the server.');
                 }
             } catch (error) {
-                 messageEl.textContent = `Registration failed. ${error.message}`;
+                 messageEl.textContent = `Registration failed: ${error.message}. Please check console for details.`;
                  messageEl.classList.add('text-red-400');
                  console.error("Registration Error:", error);
             } finally {
