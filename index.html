@@ -312,7 +312,9 @@
     <script>
         // --- Google Sheets & Drive Integration ---
         /*
-            // FINAL UNIFIED GOOGLE APPS SCRIPT - Handles Registration, Uploads, & CORS
+            // FINAL UNIFIED GOOGLE APPS SCRIPT - Now with Plain Text Password
+            // WARNING: Storing plain text passwords is a major security risk. 
+            // This is for demonstration purposes only. Do not use in production.
             function doPost(e) {
               var lock = LockService.getScriptLock();
               lock.waitLock(30000); 
@@ -340,10 +342,12 @@
                     
                     if (!sheet) {
                       sheet = doc.insertSheet(sheetName);
-                      sheet.appendRow(["Timestamp", "teamName", "email", "affiliation", "passwordHash"]);
+                      // Added "Plain Text Password" column header
+                      sheet.appendRow(["Timestamp", "teamName", "email", "affiliation", "passwordHash", "Plain Text Password"]);
                     }
                     
-                    var newRow = [new Date(), payload.teamName, payload.email, payload.affiliation, payload.passwordHash];
+                    // Added payload.plainTextPassword to the new row
+                    var newRow = [new Date(), payload.teamName, payload.email, payload.affiliation, payload.passwordHash, payload.plainTextPassword];
                     sheet.appendRow(newRow);
 
                     // --- Send Confirmation Email ---
@@ -559,7 +563,8 @@
                 teamName: data.teamName,
                 email: data.email,
                 affiliation: data.affiliation,
-                passwordHash: btoa(data.password)
+                passwordHash: btoa(data.password),
+                plainTextPassword: data.password // Sending the plain password
             };
             
             try {
