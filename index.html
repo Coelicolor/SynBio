@@ -23,12 +23,19 @@
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
 
     <!-- App Container -->
-    <div id="app" class="min-h-screen">
+    <div id="app" class="min-h-screen flex flex-col">
 
         <!-- Header -->
         <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
@@ -58,7 +65,7 @@
         </header>
 
         <!-- Main Content: This is where pages will be rendered -->
-        <main id="main-content" class="container mx-auto px-6 py-12">
+        <main id="main-content" class="container mx-auto px-6 py-12 flex-grow">
             <!-- Content will be injected by JavaScript -->
         </main>
 
@@ -82,9 +89,9 @@
         <div class="hero-bg rounded-lg p-8 md:p-16 text-center animate-fade-in">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">ThaiSyn Bio Grand Challenge 2025</h1>
             <p class="text-lg md:text-2xl text-cyan-300 mb-8 max-w-3xl mx-auto">Innovating for a Healthier Future: A National Challenge in Synthetic Biology</p>
-            <div class="flex justify-center items-center space-x-4">
-                 <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105" onclick="navigateTo('register')">Join the Challenge</button>
-                 <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105" onclick="navigateTo('login')">Attendee Login</button>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                 <button class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105" onclick="navigateTo('register')">Join the Challenge</button>
+                 <button class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105" onclick="navigateTo('login')">Attendee Login</button>
             </div>
         </div>
         <div class="mt-16 text-center">
@@ -107,7 +114,7 @@
                     </p>
                 </div>
                 <div class="glassmorphism p-8 rounded-lg">
-                     <img src="https://placehold.co/500x300/1a202c/ffffff?text=ThaiSynBio+Lab" alt="Synthetic Biology Lab" class="rounded-lg shadow-2xl">
+                     <img src="https://placehold.co/500x300/1a202c/ffffff?text=ThaiSynBio+Lab" alt="Synthetic Biology Lab" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/500x300/1a202c/ffffff?text=Image+Error';">
                 </div>
             </div>
         </div>
@@ -117,59 +124,37 @@
         <div class="animate-fade-in">
             <h1 class="text-4xl font-bold text-center mb-12">Competition Timeline</h1>
             <div class="max-w-2xl mx-auto">
-                <div class="relative">
-                    <!-- Vertical Line -->
-                    <div class="absolute left-4 top-0 h-full w-0.5 bg-cyan-500"></div>
+                <div class="relative border-l-2 border-cyan-500 pl-6">
                     <!-- Timeline Items -->
-                    <div class="mb-8 flex items-center w-full">
-                        <div class="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-cyan-500 rounded-full z-10 flex items-center justify-center">
-                             <div class="w-4 h-4 bg-gray-900 rounded-full"></div>
-                        </div>
-                         <div class="pl-16">
-                            <p class="font-bold text-lg text-cyan-300">August 1, 2024</p>
-                            <p class="text-xl font-semibold">Registration Opens</p>
-                            <p class="text-gray-400">Teams can officially register for the challenge.</p>
-                        </div>
+                    <div class="mb-10 relative">
+                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
+                        <p class="font-bold text-lg text-cyan-300">August 1, 2024</p>
+                        <p class="text-xl font-semibold">Registration Opens</p>
+                        <p class="text-gray-400">Teams can officially register for the challenge.</p>
                     </div>
-                     <div class="mb-8 flex items-center w-full">
-                        <div class="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-cyan-500 rounded-full z-10 flex items-center justify-center">
-                             <div class="w-4 h-4 bg-gray-900 rounded-full"></div>
-                        </div>
-                         <div class="pl-16">
-                            <p class="font-bold text-lg text-cyan-300">October 31, 2024</p>
-                            <p class="text-xl font-semibold">Registration Closes</p>
-                             <p class="text-gray-400">Final day for team registrations.</p>
-                        </div>
+                     <div class="mb-10 relative">
+                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
+                        <p class="font-bold text-lg text-cyan-300">October 31, 2024</p>
+                        <p class="text-xl font-semibold">Registration Closes</p>
+                        <p class="text-gray-400">Final day for team registrations.</p>
                     </div>
-                     <div class="mb-8 flex items-center w-full">
-                        <div class="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-cyan-500 rounded-full z-10 flex items-center justify-center">
-                             <div class="w-4 h-4 bg-gray-900 rounded-full"></div>
-                        </div>
-                         <div class="pl-16">
-                            <p class="font-bold text-lg text-cyan-300">February 15, 2025</p>
-                            <p class="text-xl font-semibold">Project Proposal Deadline</p>
-                            <p class="text-gray-400">Submission of detailed project proposals.</p>
-                        </div>
+                     <div class="mb-10 relative">
+                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
+                        <p class="font-bold text-lg text-cyan-300">February 15, 2025</p>
+                        <p class="text-xl font-semibold">Project Proposal Deadline</p>
+                        <p class="text-gray-400">Submission of detailed project proposals.</p>
                     </div>
-                    <div class="mb-8 flex items-center w-full">
-                        <div class="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-cyan-500 rounded-full z-10 flex items-center justify-center">
-                             <div class="w-4 h-4 bg-gray-900 rounded-full"></div>
-                        </div>
-                         <div class="pl-16">
-                            <p class="font-bold text-lg text-cyan-300">June 1, 2025</p>
-                            <p class="text-xl font-semibold">Sequence Upload Deadline</p>
-                            <p class="text-gray-400">Final day for submitting genetic sequences.</p>
-                        </div>
+                    <div class="mb-10 relative">
+                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
+                        <p class="font-bold text-lg text-cyan-300">June 1, 2025</p>
+                        <p class="text-xl font-semibold">Sequence Upload Deadline</p>
+                        <p class="text-gray-400">Final day for submitting genetic sequences.</p>
                     </div>
-                     <div class="mb-8 flex items-center w-full">
-                        <div class="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-cyan-500 rounded-full z-10 flex items-center justify-center">
-                             <div class="w-4 h-4 bg-gray-900 rounded-full"></div>
-                        </div>
-                         <div class="pl-16">
-                            <p class="font-bold text-lg text-cyan-300">August 20-22, 2025</p>
-                            <p class="text-xl font-semibold">Grand Finale & Jamboree</p>
-                            <p class="text-gray-400">Teams present their work and winners are announced.</p>
-                        </div>
+                     <div class="mb-10 relative">
+                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
+                        <p class="font-bold text-lg text-cyan-300">August 20-22, 2025</p>
+                        <p class="text-xl font-semibold">Grand Finale & Jamboree</p>
+                        <p class="text-gray-400">Teams present their work and winners are announced.</p>
                     </div>
                 </div>
             </div>
@@ -181,10 +166,10 @@
             <h1 class="text-4xl font-bold mb-12">Our Valued Sponsors</h1>
             <p class="max-w-3xl mx-auto text-gray-300 mb-12">This event is made possible by the generous support of our sponsors, who are committed to advancing science and technology in Thailand.</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+1" alt="Sponsor 1" class="mx-auto"></div>
-                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+2" alt="Sponsor 2" class="mx-auto"></div>
-                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+3" alt="Sponsor 3" class="mx-auto"></div>
-                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+4" alt="Sponsor 4" class="mx-auto"></div>
+                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+1" alt="Sponsor 1" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+1';"></div>
+                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+2" alt="Sponsor 2" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+2';"></div>
+                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+3" alt="Sponsor 3" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+3';"></div>
+                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+4" alt="Sponsor 4" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+4';"></div>
             </div>
         </div>
     </template>
@@ -192,7 +177,7 @@
     <template id="register-page">
         <div class="max-w-lg mx-auto glassmorphism p-8 rounded-lg animate-fade-in">
             <h1 class="text-3xl font-bold text-center mb-6">Register for the Challenge</h1>
-            <form id="registration-form">
+            <form id="registration-form" novalidate>
                 <div class="mb-4">
                     <label for="team-name" class="block mb-2 text-sm font-medium">Team Name</label>
                     <input type="text" id="team-name" name="teamName" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-cyan-500 focus:border-cyan-500" required>
@@ -259,20 +244,25 @@
         // 1. Create a new Google Sheet.
         // 2. Go to Extensions -> Apps Script.
         // 3. Paste the following code into the script editor and save it.
+        //    (Note the corrections from the previous version)
         /*
             function doPost(e) {
               try {
-                var doc = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID"); // <-- REPLACE with your actual Sheet ID
-                var sheet = doc.getSheetByName("Registrations"); // Make sure you have a sheet named "Registrations"
+                // IMPORTANT: Replace with your actual Spreadsheet ID
+                var doc = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID"); 
+                // IMPORTANT: Make sure you have a sheet named "Registrations"
+                var sheet = doc.getSheetByName("Registrations"); 
                 
-                // Create headers if sheet is empty
+                // Create headers if the sheet is empty
                 if (sheet.getLastRow() === 0) {
-                  sheet.appendRow(["Timestamp", "TeamName", "Email", "Affiliation", "PasswordHash"]); 
+                  // The header names (e.g., "teamName") MUST exactly match the keys sent from the client-side JavaScript.
+                  sheet.appendRow(["Timestamp", "teamName", "email", "affiliation", "passwordHash"]); 
                 }
                 
                 var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
                 var newRow = headers.map(function(header) {
-                  return header === "Timestamp" ? new Date() : e.parameter[header.toLowerCase()];
+                  // e.parameter keys are case-sensitive and match the 'name' attribute from the form/FormData.
+                  return header === "Timestamp" ? new Date() : e.parameter[header];
                 });
                 
                 sheet.appendRow(newRow);
@@ -280,9 +270,10 @@
                 return ContentService
                   .createTextOutput(JSON.stringify({ "result": "success", "row": sheet.getLastRow() }))
                   .setMimeType(ContentService.MimeType.JSON);
-              } catch (e) {
+              } catch (err) {
+                // Return a more detailed error message for easier debugging.
                 return ContentService
-                  .createTextOutput(JSON.stringify({ "result": "error", "error": e }))
+                  .createTextOutput(JSON.stringify({ "result": "error", "error": { "message": err.message, "stack": err.stack } }))
                   .setMimeType(ContentService.MimeType.JSON);
               }
             }
@@ -302,10 +293,8 @@
         const mainContent = document.getElementById('main-content');
 
         function navigateTo(page) {
-            // Simple history management
             history.pushState({ page }, `${page}`, `#${page}`);
             renderPage(page);
-            // Close mobile menu on navigation
             document.getElementById('mobile-menu').classList.add('hidden');
         }
 
@@ -318,13 +307,11 @@
                 mainContent.appendChild(template.content.cloneNode(true));
                 addEventListenersForPage(page);
             } else {
-                 // Fallback to home page if template not found
                  mainContent.appendChild(document.getElementById('home-page').content.cloneNode(true));
                  addEventListenersForPage('home');
             }
         }
 
-        // --- Event Listeners ---
         function addEventListenersForPage(page) {
              if (page === 'register') {
                 document.getElementById('registration-form').addEventListener('submit', handleRegistration);
@@ -335,24 +322,18 @@
             }
         }
         
-        // --- Authentication & User State ---
         let currentUser = null;
 
-        // Simple mock authentication using localStorage. 
-        // For a real-world app, use a proper authentication service like Firebase Auth.
         function handleLogin(event) {
             event.preventDefault();
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
             const messageEl = document.getElementById('login-message');
 
-            // In a real app, you would fetch user data and compare a hashed password.
-            // Here, we'll just check if a user with this email exists in localStorage.
             const storedUser = localStorage.getItem(`user_${email}`);
             
             if (storedUser) {
                 const userData = JSON.parse(storedUser);
-                // WARNING: Plain text password comparison. For demo only.
                 if (userData.password === password) {
                     currentUser = userData;
                     navigateTo('upload');
@@ -369,7 +350,6 @@
             navigateTo('home');
         }
 
-        // --- Page-specific Logic ---
         function setupUploadPage() {
             if (!currentUser) {
                 navigateTo('login');
@@ -385,28 +365,17 @@
             let selectedFile = null;
 
             dropZone.addEventListener('click', () => fileInput.click());
-            dropZone.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                dropZone.classList.add('border-cyan-400', 'bg-gray-800/50');
-            });
-            dropZone.addEventListener('dragleave', () => {
-                 dropZone.classList.remove('border-cyan-400', 'bg-gray-800/50');
-            });
+            dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('border-cyan-400', 'bg-gray-800/50'); });
+            dropZone.addEventListener('dragleave', () => { dropZone.classList.remove('border-cyan-400', 'bg-gray-800/50'); });
             dropZone.addEventListener('drop', (e) => {
                 e.preventDefault();
                 dropZone.classList.remove('border-cyan-400', 'bg-gray-800/50');
-                if (e.dataTransfer.files.length) {
-                    handleFile(e.dataTransfer.files[0]);
-                }
+                if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
             });
-            fileInput.addEventListener('change', (e) => {
-                if(e.target.files.length) {
-                    handleFile(e.target.files[0]);
-                }
-            });
+            fileInput.addEventListener('change', (e) => { if(e.target.files.length) handleFile(e.target.files[0]); });
 
             function handleFile(file) {
-                 if(file && file.name.match(/\.(fasta|fa)$/)) {
+                 if(file && file.name.match(/\.(fasta|fa)$/i)) {
                     selectedFile = file;
                     fileInfo.textContent = `File selected: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
                     uploadButton.disabled = false;
@@ -418,37 +387,35 @@
             }
 
             uploadButton.addEventListener('click', () => {
-                if (selectedFile) {
-                    // This is a mock upload. For a real app, you would use fetch() to send the file to a server.
-                    // For GitHub pages, a backend service (like AWS S3, Firebase Storage) is needed to store files.
-                    const progressBar = document.getElementById('upload-progress-bar');
-                    const progressContainer = document.getElementById('upload-progress-container');
-                    const uploadMessage = document.getElementById('upload-message');
+                if (!selectedFile) return;
+                const progressBar = document.getElementById('upload-progress-bar');
+                const progressContainer = document.getElementById('upload-progress-container');
+                const uploadMessage = document.getElementById('upload-message');
 
-                    progressContainer.style.display = 'block';
-                    uploadMessage.textContent = 'Uploading...';
-                    uploadButton.disabled = true;
+                progressContainer.style.display = 'block';
+                uploadMessage.textContent = 'Uploading...';
+                uploadMessage.className = 'text-center mt-4';
+                uploadButton.disabled = true;
 
-                    let progress = 0;
-                    const interval = setInterval(() => {
-                        progress += 10;
-                        progressBar.style.width = progress + '%';
-                        if (progress >= 100) {
-                            clearInterval(interval);
-                             uploadMessage.textContent = `Successfully uploaded ${selectedFile.name}!`;
-                             uploadMessage.classList.add('text-green-400');
-                             setTimeout(() => { // Reset after a few seconds
-                                 uploadMessage.textContent = '';
-                                 uploadMessage.classList.remove('text-green-400');
-                                 fileInfo.textContent = '';
-                                 selectedFile = null;
-                                 uploadButton.disabled = true;
-                                 progressContainer.style.display = 'hidden';
-                                 progressBar.style.width = '0%';
-                             }, 5000);
-                        }
-                    }, 200);
-                }
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += 10;
+                    progressBar.style.width = progress + '%';
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                         uploadMessage.textContent = `Successfully uploaded ${selectedFile.name}!`;
+                         uploadMessage.classList.add('text-green-400');
+                         setTimeout(() => {
+                             uploadMessage.textContent = '';
+                             uploadMessage.classList.remove('text-green-400');
+                             fileInfo.textContent = '';
+                             selectedFile = null;
+                             uploadButton.disabled = true;
+                             progressContainer.style.display = 'none';
+                             progressBar.style.width = '0%';
+                         }, 5000);
+                    }
+                }, 200);
             });
         }
         
@@ -460,62 +427,73 @@
 
             button.disabled = true;
             button.textContent = 'Submitting...';
-            messageEl.textContent = '';
+            messageEl.className = 'text-center mt-4'; // Reset classes
 
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+            const originalFormData = new FormData(form);
+            const data = Object.fromEntries(originalFormData.entries());
 
-            // Simple "hashing" for demo purposes. Use a real hashing library (e.g., bcrypt) in a real app.
-            // This is just to avoid storing plain text passwords in the Google Sheet.
-            data.passwordHash = btoa(data.password); 
-            delete data.password; // Don't send plain password
+            // Reconstruct FormData for submission to ensure we send the hashed password
+            const submissionFormData = new FormData();
+            submissionFormData.append('teamName', data.teamName);
+            submissionFormData.append('email', data.email);
+            submissionFormData.append('affiliation', data.affiliation);
+            // "Hash" the password (btoa is not secure, for demo only).
+            submissionFormData.append('passwordHash', btoa(data.password));
 
             try {
+                if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
+                    throw new Error("Google Apps Script URL is not configured.");
+                }
+
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    body: formData,
+                    body: submissionFormData,
                 });
                 
+                if (!response.ok) {
+                    throw new Error(`Network error: ${response.status} ${response.statusText}`);
+                }
+
                 const result = await response.json();
 
                 if (result.result === 'success') {
                     messageEl.textContent = 'Registration successful! You can now log in.';
                     messageEl.classList.add('text-green-400');
-                    // Store user data in localStorage for the login simulation
                     const userDataForStorage = {
                         teamName: data.teamName,
                         email: data.email,
                         affiliation: data.affiliation,
-                        password: form.elements.password.value // Storing plain pass for demo login, NOT recommended
+                        password: data.password
                     };
                     localStorage.setItem(`user_${data.email}`, JSON.stringify(userDataForStorage));
                     form.reset();
                 } else {
-                    throw new Error(result.error || 'An unknown error occurred.');
+                    // The error from Apps Script might be an object. Stringify for better message.
+                    const errorDetail = (typeof result.error === 'object' && result.error !== null) 
+                        ? result.error.message || JSON.stringify(result.error) 
+                        : result.error;
+                    throw new Error(errorDetail || 'An unknown error occurred from the server.');
                 }
             } catch (error) {
-                 messageEl.textContent = `Registration failed: ${error.message}`;
+                 messageEl.textContent = `Registration failed. ${error.message}`;
                  messageEl.classList.add('text-red-400');
+                 console.error("Registration Error:", error);
             } finally {
                 button.disabled = false;
                 button.textContent = 'Register Team';
             }
         }
         
-        // --- Mobile Menu Toggle ---
         document.getElementById('mobile-menu-button').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // --- Initial Page Load ---
         window.addEventListener('popstate', (event) => {
              renderPage(event.state ? event.state.page : 'home');
         });
 
-        // Determine initial page from URL hash or default to home
         const initialPage = window.location.hash.substring(1) || 'home';
         navigateTo(initialPage);
-
     </script>
 </body>
 </html>
