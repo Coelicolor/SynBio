@@ -40,16 +40,16 @@
         <!-- Header -->
         <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-white" onclick="event.preventDefault(); navigateTo('home')">
+                <a href="#home" class="text-2xl font-bold text-white">
                     Thai SynBio GC 2025
                 </a>
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="event.preventDefault(); navigateTo('home')">Home</a>
-                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="event.preventDefault(); navigateTo('about')">About</a>
-                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="event.preventDefault(); navigateTo('timeline')">Timeline</a>
-                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="event.preventDefault(); navigateTo('sponsors')">Sponsors</a>
-                    <a href="https://coelicolor.github.io/SynBio/#login" class="hover:text-cyan-400 transition-colors" onclick="event.preventDefault(); navigateTo('login')">Attendee Login</a>
-                    <a href="#" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors" onclick="event.preventDefault(); navigateTo('register')">Register Now</a>
+                    <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#timeline" class="hover:text-cyan-400 transition-colors">Timeline</a>
+                    <a href="#sponsors" class="hover:text-cyan-400 transition-colors">Sponsors</a>
+                    <a href="#login" class="hover:text-cyan-400 transition-colors">Attendee Login</a>
+                    <a href="#register" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors">Register Now</a>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -57,12 +57,12 @@
             </nav>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-                <a href="#" class="block py-2 hover:text-cyan-400" onclick="event.preventDefault(); navigateTo('home')">Home</a>
-                <a href="#" class="block py-2 hover:text-cyan-400" onclick="event.preventDefault(); navigateTo('about')">About</a>
-                <a href="#" class="block py-2 hover:text-cyan-400" onclick="event.preventDefault(); navigateTo('timeline')">Timeline</a>
-                <a href="#" class="block py-2 hover:text-cyan-400" onclick="event.preventDefault(); navigateTo('sponsors')">Sponsors</a>
-                <a href="https://coelicolor.github.io/SynBio/#login" class="block py-2 hover:text-cyan-400" onclick="event.preventDefault(); navigateTo('login')">Attendee Login</a>
-                <a href="#" class="block mt-2 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center" onclick="event.preventDefault(); navigateTo('register')">Register Now</a>
+                <a href="#home" class="block py-2 hover:text-cyan-400">Home</a>
+                <a href="#about" class="block py-2 hover:text-cyan-400">About</a>
+                <a href="#timeline" class="block py-2 hover:text-cyan-400">Timeline</a>
+                <a href="#sponsors" class="block py-2 hover:text-cyan-400">Sponsors</a>
+                <a href="#login" class="block py-2 hover:text-cyan-400">Attendee Login</a>
+                <a href="#register" class="block mt-2 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">Register Now</a>
             </div>
         </header>
 
@@ -92,8 +92,8 @@
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Thai SynBio Grand Challenge 2025</h1>
             <p class="text-lg md:text-2xl text-cyan-300 mb-8 max-w-3xl mx-auto">Innovating for a More Sustainable Future: A National Challenge in Synthetic Biology</p>
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                 <a href="#" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 inline-block" onclick="event.preventDefault(); navigateTo('register')">Join the Challenge</a>
-                 <a href="https://coelicolor.github.io/SynBio/#login" class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 inline-block" onclick="event.preventDefault(); navigateTo('login')">Attendee Login</a>
+                 <a href="#register" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 inline-block">Join the Challenge</a>
+                 <a href="#login" class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 inline-block">Attendee Login</a>
             </div>
         </div>
         <div class="mt-16 text-center">
@@ -316,17 +316,16 @@
 
         // --- SPA (Single Page Application) Logic ---
         const mainContent = document.getElementById('main-content');
+        const mobileMenu = document.getElementById('mobile-menu');
 
         function navigateTo(page) {
-            // Update the URL hash
             window.location.hash = page;
-            // Render the page content
-            renderPage(page);
-            // Close mobile menu on navigation
-            document.getElementById('mobile-menu').classList.add('hidden');
         }
 
         function renderPage(page) {
+            // Close mobile menu on navigation
+            mobileMenu.classList.add('hidden');
+            
             mainContent.innerHTML = '';
             let templateId = `${page}-page`;
             const template = document.getElementById(templateId);
@@ -335,6 +334,7 @@
                 mainContent.appendChild(template.content.cloneNode(true));
                 addEventListenersForPage(page);
             } else {
+                 // Fallback to home page if template not found
                  mainContent.appendChild(document.getElementById('home-page').content.cloneNode(true));
                  addEventListenersForPage('home');
             }
@@ -536,7 +536,7 @@
         renderPage(initialPage);
         
         document.getElementById('mobile-menu-button').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+            mobileMenu.classList.toggle('hidden');
         });
 
     </script>
