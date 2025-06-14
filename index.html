@@ -40,16 +40,16 @@
         <!-- Header -->
         <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-white" onclick="navigateTo('home')">
-                    ThaiSynBio GC 2025
+                <a href="#" class="text-2xl font-bold text-white" onclick="event.preventDefault(); navigateTo('home')">
+                    Thai SynBio GC 2025
                 </a>
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="navigateTo('home')">Home</a>
-                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="navigateTo('about')">About</a>
-                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="navigateTo('timeline')">Timeline</a>
-                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="navigateTo('sponsors')">Sponsors</a>
-                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="navigateTo('login')">Attendee Login</a>
-                    <a href="#" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors" onclick="navigateTo('register')">Register Now</a>
+                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="event.preventDefault(); navigateTo('home')">Home</a>
+                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="event.preventDefault(); navigateTo('about')">About</a>
+                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="event.preventDefault(); navigateTo('timeline')">Timeline</a>
+                    <a href="#" class="hover:text-cyan-400 transition-colors" onclick="event.preventDefault(); navigateTo('sponsors')">Sponsors</a>
+                    <a href="https://coelicolor.github.io/SynBio/#login" class="hover:text-cyan-400 transition-colors" onclick="event.preventDefault(); navigateTo('login')">Attendee Login</a>
+                    <a href="#" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors" onclick="event.preventDefault(); navigateTo('register')">Register Now</a>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -57,12 +57,12 @@
             </nav>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-                <a href="#" class="block py-2 hover:text-cyan-400" onclick="navigateTo('home')">Home</a>
-                <a href="#" class="block py-2 hover:text-cyan-400" onclick="navigateTo('about')">About</a>
-                <a href="#" class="block py-2 hover:text-cyan-400" onclick="navigateTo('timeline')">Timeline</a>
-                <a href="#" class="block py-2 hover:text-cyan-400" onclick="navigateTo('sponsors')">Sponsors</a>
-                <a href="#" class="block py-2 hover:text-cyan-400" onclick="navigateTo('login')">Attendee Login</a>
-                <a href="#" class="block mt-2 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center" onclick="navigateTo('register')">Register Now</a>
+                <a href="#" class="block py-2 hover:text-cyan-400" onclick="event.preventDefault(); navigateTo('home')">Home</a>
+                <a href="#" class="block py-2 hover:text-cyan-400" onclick="event.preventDefault(); navigateTo('about')">About</a>
+                <a href="#" class="block py-2 hover:text-cyan-400" onclick="event.preventDefault(); navigateTo('timeline')">Timeline</a>
+                <a href="#" class="block py-2 hover:text-cyan-400" onclick="event.preventDefault(); navigateTo('sponsors')">Sponsors</a>
+                <a href="https://coelicolor.github.io/SynBio/#login" class="block py-2 hover:text-cyan-400" onclick="event.preventDefault(); navigateTo('login')">Attendee Login</a>
+                <a href="#" class="block mt-2 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center" onclick="event.preventDefault(); navigateTo('register')">Register Now</a>
             </div>
         </header>
 
@@ -90,15 +90,15 @@
     <template id="home-page">
         <div class="hero-bg rounded-lg p-8 md:p-16 text-center animate-fade-in">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Thai SynBio Grand Challenge 2025</h1>
-            <p class="text-lg md:text-2xl text-cyan-300 mb-8 max-w-3xl mx-auto">Innovating for a Sustainable Future: A National Challenge in Synthetic Biology</p>
+            <p class="text-lg md:text-2xl text-cyan-300 mb-8 max-w-3xl mx-auto">Innovating for a More Sustainable Future: A National Challenge in Synthetic Biology</p>
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                 <button class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105" onclick="navigateTo('register')">Join the Challenge</button>
-                 <button class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105" onclick="navigateTo('login')">Attendee Login</button>
+                 <a href="#" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 inline-block" onclick="event.preventDefault(); navigateTo('register')">Join the Challenge</a>
+                 <a href="https://coelicolor.github.io/SynBio/#login" class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 inline-block" onclick="event.preventDefault(); navigateTo('login')">Attendee Login</a>
             </div>
         </div>
         <div class="mt-16 text-center">
              <h2 class="text-3xl font-bold mb-2">The Future is Engineered with Biology</h2>
-             <p class="max-w-4xl mx-auto text-gray-300">Join researchers, students, and innovators from across Thailand to address pressing national health challenges using the power of synthetic biology. Together, we can design and build novel biological systems to create a sustainable and healthier future for all.</p>
+             <p class="max-w-4xl mx-auto text-gray-300">Join researchers, students, and innovators from across Thailand to address pressing national health challenges using the power of synthetic biology. Together, we can design and build novel biological systems to create a more sustainable future for all.</p>
         </div>
     </template>
 
@@ -116,7 +116,7 @@
                     </p>
                 </div>
                 <div class="glassmorphism p-8 rounded-lg">
-                     <img src="https://placehold.co/500x300/1a202c/ffffff?text=ThaiSynBio+Lab" alt="Synthetic Biology Lab" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/500x300/1a202c/ffffff?text=Image+Error';">
+                     <img src="https://placehold.co/500x300/1a202c/ffffff?text=Thai+SynBio+Lab" alt="Synthetic Biology Lab" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/500x300/1a202c/ffffff?text=Image+Error';">
                 </div>
             </div>
         </div>
@@ -275,7 +275,6 @@
                       sheet.appendRow(["Timestamp", "teamName", "email", "affiliation", "passwordHash"]);
                     }
                     
-                    // Note: We are now using payload properties instead of e.parameter
                     var newRow = [new Date(), payload.teamName, payload.email, payload.affiliation, payload.passwordHash];
                     sheet.appendRow(newRow);
 
@@ -319,8 +318,11 @@
         const mainContent = document.getElementById('main-content');
 
         function navigateTo(page) {
-            history.pushState({ page }, `${page}`, `#${page}`);
+            // Update the URL hash
+            window.location.hash = page;
+            // Render the page content
             renderPage(page);
+            // Close mobile menu on navigation
             document.getElementById('mobile-menu').classList.add('hidden');
         }
 
@@ -337,6 +339,12 @@
                  addEventListenersForPage('home');
             }
         }
+        
+        // Listen for hash changes to navigate
+        window.addEventListener('hashchange', () => {
+            const page = window.location.hash.substring(1) || 'home';
+            renderPage(page);
+        });
 
         function addEventListenersForPage(page) {
              if (page === 'register') {
@@ -442,7 +450,6 @@
                 try {
                     const response = await fetch(GOOGLE_SCRIPT_URL, {
                         method: 'POST',
-                        // No 'Content-Type' header needed, as we send a raw string.
                         body: JSON.stringify(payload)
                     });
 
@@ -465,7 +472,7 @@
             };
         }
         
-        // --- REGISTRATION LOGIC (CORS FIX) ---
+        // --- REGISTRATION LOGIC ---
         async function handleRegistration(event) {
             event.preventDefault();
             const form = event.target;
@@ -490,7 +497,6 @@
             try {
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    // Sending as a raw string to avoid preflight/CORS issues. The script will parse it.
                     body: JSON.stringify(payload), 
                 });
                 
@@ -525,16 +531,14 @@
         }
         
         // --- INITIALIZATION ---
+        // Initial page load based on URL hash
+        const initialPage = window.location.hash.substring(1) || 'home';
+        renderPage(initialPage);
+        
         document.getElementById('mobile-menu-button').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        window.addEventListener('popstate', (event) => {
-             renderPage(event.state ? event.state.page : 'home');
-        });
-
-        const initialPage = window.location.hash.substring(1) || 'home';
-        navigateTo(initialPage);
     </script>
 </body>
 </html>
