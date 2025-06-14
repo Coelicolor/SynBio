@@ -48,6 +48,7 @@
                     <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
                     <a href="#timeline" class="hover:text-cyan-400 transition-colors">Timeline</a>
                     <a href="#sponsors" class="hover:text-cyan-400 transition-colors">Sponsors</a>
+                    <a href="#education" class="hover:text-cyan-400 transition-colors">Education</a>
                     <a href="#login" class="hover:text-cyan-400 transition-colors">Attendee Login</a>
                     <a href="#register" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors">Register Now</a>
                 </div>
@@ -61,6 +62,7 @@
                 <a href="#about" class="block py-2 hover:text-cyan-400">About</a>
                 <a href="#timeline" class="block py-2 hover:text-cyan-400">Timeline</a>
                 <a href="#sponsors" class="block py-2 hover:text-cyan-400">Sponsors</a>
+                <a href="#education" class="block py-2 hover:text-cyan-400">Education</a>
                 <a href="#login" class="block py-2 hover:text-cyan-400">Attendee Login</a>
                 <a href="#register" class="block mt-2 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">Register Now</a>
             </div>
@@ -173,6 +175,71 @@
                 <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+2" alt="Sponsor 2" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+2';"></div>
                 <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+3" alt="Sponsor 3" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+3';"></div>
                 <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+4" alt="Sponsor 4" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+4';"></div>
+            </div>
+        </div>
+    </template>
+
+    <template id="education-page">
+        <div class="animate-fade-in">
+            <h1 class="text-4xl font-bold text-center mb-12">Educational Resources</h1>
+            <p class="max-w-3xl mx-auto text-center text-gray-300 mb-16">
+                Welcome to the resource hub for the Thai SynBio Grand Challenge. Here you'll find materials to help your team design, build, and test your project.
+            </p>
+    
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Intro to SynBio -->
+                <div class="glassmorphism p-6 rounded-lg flex flex-col">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-3">Introduction to Synthetic Biology</h3>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        New to synthetic biology? Start here with foundational concepts, key principles, and the history of the field.
+                    </p>
+                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">View Resources</a>
+                </div>
+    
+                <!-- Card 2: Workshops -->
+                <div class="glassmorphism p-6 rounded-lg flex flex-col">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-3">Workshop Materials</h3>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        Access slides, recordings, and code from our educational workshops covering topics from DNA design to metabolic engineering.
+                    </p>
+                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">Access Materials</a>
+                </div>
+    
+                <!-- Card 3: Protocols -->
+                <div class="glassmorphism p-6 rounded-lg flex flex-col">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-3">Lab Protocols & Guides</h3>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        Standard protocols for DNA assembly, transformations, and measurement procedures provided by the SIAT Biofoundry.
+                    </p>
+                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">View Protocols</a>
+                </div>
+                
+                <!-- Card 4: Design Tools -->
+                <div class="glassmorphism p-6 rounded-lg flex flex-col">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-3">DNA Design Tools</h3>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        A curated list of recommended software for designing your genetic circuits, from simple plasmid editors to advanced pathway modelers.
+                    </p>
+                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">Explore Tools</a>
+                </div>
+    
+                <!-- Card 5: Biofoundry Info -->
+                <div class="glassmorphism p-6 rounded-lg flex flex-col">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-3">SIAT Biofoundry Guide</h3>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        Everything you need to know about submitting your designs for synthesis and testing at the SIAT Biofoundry.
+                    </p>
+                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">Read Guide</a>
+                </div>
+    
+                <!-- Card 6: External Links -->
+                <div class="glassmorphism p-6 rounded-lg flex flex-col">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-3">Useful Links</h3>
+                    <p class="text-gray-300 mb-4 flex-grow">
+                        A collection of external links to helpful resources like part registries, research papers, and other SynBio competitions.
+                    </p>
+                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">See Links</a>
+                </div>
             </div>
         </div>
     </template>
