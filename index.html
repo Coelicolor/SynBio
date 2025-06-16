@@ -121,9 +121,12 @@
             <form id="login-form">
                 <div class="mb-4"><label for="login-email" class="block mb-2">Email</label><input type="email" id="login-email" class="w-full bg-gray-700 p-2.5 rounded-lg" required></div>
                 <div class="mb-6"><label for="login-password" class="block mb-2">Password</label><input type="password" id="login-password" class="w-full bg-gray-700 p-2.5 rounded-lg" required></div>
-                <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 font-bold py-3 rounded-lg">Log In</button>
+                <div class="flex items-center justify-between">
+                    <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-lg">Log In</button>
+                    <a href="#" id="forgot-password-link" class="text-sm text-cyan-400 hover:underline">Forgot Password?</a>
+                </div>
             </form>
-            <p id="form-message" class="text-center mt-4 text-red-400"></p>
+            <p id="form-message" class="text-center mt-4"></p>
         </div>
     </template>
     <template id="upload-page">
@@ -155,7 +158,7 @@
             apiKey: "AIzaSyATIRGjOJaVaO1gFDYTNxdtIjKVjWbuw1A",
             authDomain: "thaisynbiogc.firebaseapp.com",
             projectId: "thaisynbiogc",
-            storageBucket: "thaisynbiogc.appspot.com", // Corrected for compatibility
+            storageBucket: "thaisynbiogc.appspot.com",
             messagingSenderId: "1027958846508",
             appId: "1:1027958846508:web:246300c008a6c361c68d89",
             measurementId: "G-CSSDRNHLZT"
@@ -194,7 +197,7 @@
 
         // Listen for Authentication State Changes
         auth.onAuthStateChanged(user => {
-            handleNavigation(); // Re-render the page on auth state change
+            handleNavigation();
         });
 
         function addEventListenersForPage(page) {
@@ -202,11 +205,12 @@
                 document.getElementById('registration-form').addEventListener('submit', handleRegistration);
             } else if (page === 'login') {
                 document.getElementById('login-form').addEventListener('submit', handleLogin);
+                document.getElementById('forgot-password-link').addEventListener('click', handleForgotPassword);
             } else if (page === 'upload') {
                 if (auth.currentUser) {
                     setupUploadPage(auth.currentUser);
                 } else {
-                    window.location.hash = 'login'; // Redirect if not logged in
+                    window.location.hash = 'login';
                 }
             }
         }
@@ -223,18 +227,15 @@
             messageEl.textContent = 'Registering...';
 
             try {
-                // Step 1: Create the user in Firebase Auth
                 const userCredential = await auth.createUserWithEmailAndPassword(email, password);
                 const user = userCredential.user;
 
-                // Step 2: Save additional user info to Firestore
                 await db.collection('users').doc(user.uid).set({
                     teamName: teamName,
                     affiliation: affiliation,
                     email: email,
                 });
                 
-                // Step 3: Send verification email
                 await user.sendEmailVerification();
 
                 messageEl.textContent = 'Registration successful! Please check your email to verify your account.';
@@ -255,16 +256,44 @@
             messageEl.textContent = 'Logging in...';
 
             try {
-                await auth.signInWithEmailAndPassword(email, password);
-                window.location.hash = 'upload'; // Navigate to upload page on successful login
+                const userCredential = await auth.signInWithEmailAndPassword(email, password);
+                if (!userCredential.user.emailVerified) {
+                    messageEl.textContent = 'Error: Please verify your email before logging in. Check your inbox for a verification link.';
+                    messageEl.className = 'text-center mt-4 text-red-400';
+                    await auth.signOut(); // Log out user if email is not verified
+                    return;
+                }
+                window.location.hash = 'upload';
             } catch (error) {
                 messageEl.textContent = `Error: ${error.message}`;
+                messageEl.className = 'text-center mt-4 text-red-400';
+            }
+        }
+        
+        async function handleForgotPassword(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const messageEl = document.getElementById('form-message');
+
+            if (!email) {
+                messageEl.textContent = 'Please enter your email address to reset your password.';
+                messageEl.className = 'text-center mt-4 text-red-400';
+                return;
+            }
+
+            try {
+                await auth.sendPasswordResetEmail(email);
+                messageEl.textContent = 'Password reset email sent! Please check your inbox.';
+                messageEl.className = 'text-center mt-4 text-green-400';
+            } catch (error) {
+                messageEl.textContent = `Error: ${error.message}`;
+                messageEl.className = 'text-center mt-4 text-red-400';
             }
         }
 
         async function handleLogout() {
             await auth.signOut();
-            window.location.hash = 'home'; // Navigate to home after logout
+            window.location.hash = 'home';
         }
         
         async function setupUploadPage(user) {
