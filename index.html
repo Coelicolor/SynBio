@@ -81,7 +81,23 @@
         </div>
     </template>
     <template id="about-page">
-        <div class="animate-fade-in"><h1 class="text-4xl font-bold text-center mb-12">About the Challenge</h1></div>
+        <div class="animate-fade-in">
+            <h1 class="text-4xl font-bold text-center mb-12">About the Challenge</h1>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-cyan-400 mb-4">Our Mission</h2>
+                    <p class="text-gray-300 mb-4">
+                        The Thai SynBio Grand Challenge is a national initiative to catalyze innovation in synthetic biology to solve Thailand's most critical health and environmental problems. We aim to foster collaboration, cultivate talent, and accelerate the transition of cutting-edge research from the lab to real-world impact.
+                    </p>
+                     <p class="text-gray-300">
+                        This competition invites multidisciplinary teams to design, build, and test novel biological circuits and systems. We believe that by bringing together the brightest minds, we can unlock the potential of synthetic biology to create a better tomorrow.
+                    </p>
+                </div>
+                <div class="glassmorphism p-8 rounded-lg">
+                     <img src="https://placehold.co/500x300/1a202c/ffffff?text=Thai+SynBio+Lab" alt="Synthetic Biology Lab" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/500x300/1a202c/ffffff?text=Image+Error';">
+                </div>
+            </div>
+        </div>
     </template>
     <template id="timeline-page">
         <div class="animate-fade-in">
@@ -97,10 +113,32 @@
         </div>
     </template>
     <template id="sponsors-page">
-        <div class="animate-fade-in text-center"><h1 class="text-4xl font-bold mb-12">Our Valued Sponsors</h1></div>
+        <div class="animate-fade-in text-center">
+            <h1 class="text-4xl font-bold mb-12">Our Valued Sponsors</h1>
+            <p class="max-w-3xl mx-auto text-gray-300 mb-12">This event is made possible by the generous support of our sponsors, who are committed to advancing science and technology in Thailand.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+1" alt="Sponsor 1" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+1';"></div>
+                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+2" alt="Sponsor 2" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+2';"></div>
+                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+3" alt="Sponsor 3" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+3';"></div>
+                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+4" alt="Sponsor 4" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+4';"></div>
+            </div>
+        </div>
     </template>
     <template id="education-page">
-        <div class="animate-fade-in"><h1 class="text-4xl font-bold text-center mb-12">Educational Resources</h1></div>
+        <div class="animate-fade-in">
+            <h1 class="text-4xl font-bold text-center mb-12">Educational Resources</h1>
+            <p class="max-w-3xl mx-auto text-center text-gray-300 mb-16">
+                Welcome to the resource hub for the Thai SynBio Grand Challenge. Here you'll find materials to help your team design, build, and test your project.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glassmorphism p-6 rounded-lg flex flex-col"><h3 class="text-xl font-bold text-cyan-400 mb-3">Introduction to Synthetic Biology</h3><p class="text-gray-300 mb-4 flex-grow">New to synthetic biology? Start here with foundational concepts, key principles, and the history of the field.</p><a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full text-center">View Resources</a></div>
+                <div class="glassmorphism p-6 rounded-lg flex flex-col"><h3 class="text-xl font-bold text-cyan-400 mb-3">Workshop Materials</h3><p class="text-gray-300 mb-4 flex-grow">Access slides, recordings, and code from our educational workshops covering topics from DNA design to metabolic engineering.</p><a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full text-center">Access Materials</a></div>
+                <div class="glassmorphism p-6 rounded-lg flex flex-col"><h3 class="text-xl font-bold text-cyan-400 mb-3">Lab Protocols & Guides</h3><p class="text-gray-300 mb-4 flex-grow">Standard protocols for DNA assembly, transformations, and measurement procedures provided by the SIAT Biofoundry.</p><a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full text-center">View Protocols</a></div>
+                <div class="glassmorphism p-6 rounded-lg flex flex-col"><h3 class="text-xl font-bold text-cyan-400 mb-3">DNA Design Tools</h3><p class="text-gray-300 mb-4 flex-grow">A curated list of recommended software for designing your genetic circuits, from simple plasmid editors to advanced pathway modelers.</p><a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full text-center">Explore Tools</a></div>
+                <div class="glassmorphism p-6 rounded-lg flex flex-col"><h3 class="text-xl font-bold text-cyan-400 mb-3">SIAT Biofoundry Guide</h3><p class="text-gray-300 mb-4 flex-grow">Everything you need to know about submitting your designs for synthesis and testing at the SIAT Biofoundry.</p><a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full text-center">Read Guide</a></div>
+                <div class="glassmorphism p-6 rounded-lg flex flex-col"><h3 class="text-xl font-bold text-cyan-400 mb-3">Useful Links</h3><p class="text-gray-300 mb-4 flex-grow">A collection of external links to helpful resources like part registries, research papers, and other SynBio competitions.</p><a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full text-center">See Links</a></div>
+            </div>
+        </div>
     </template>
     <template id="register-page">
         <div class="max-w-lg mx-auto glassmorphism p-8 rounded-lg animate-fade-in">
