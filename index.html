@@ -7,9 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+        body { font-family: 'Inter', sans-serif; }
         .hero-bg {
             background-color: #1a202c;
             background-image:
@@ -23,9 +21,7 @@
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
+        .animate-fade-in { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -36,27 +32,21 @@
 
     <!-- App Container -->
     <div id="app" class="min-h-screen flex flex-col">
-
         <!-- Header -->
         <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#home" class="text-2xl font-bold text-white">
-                    Thai SynBio GC 2025
-                </a>
+                <a href="#home" class="text-2xl font-bold text-white">Thai SynBio GC 2025</a>
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
-                    <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-                    <a href="#timeline" class="hover:text-cyan-400 transition-colors">Timeline</a>
-                    <a href="#sponsors" class="hover:text-cyan-400 transition-colors">Sponsors</a>
-                    <a href="#education" class="hover:text-cyan-400 transition-colors">Education</a>
-                    <a href="#login" class="hover:text-cyan-400 transition-colors">Attendee Login</a>
-                    <a href="#register" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors">Register Now</a>
+                    <a href="#home" class="hover:text-cyan-400">Home</a>
+                    <a href="#about" class="hover:text-cyan-400">About</a>
+                    <a href="#timeline" class="hover:text-cyan-400">Timeline</a>
+                    <a href="#sponsors" class="hover:text-cyan-400">Sponsors</a>
+                    <a href="#education" class="hover:text-cyan-400">Education</a>
+                    <a href="#login" class="hover:text-cyan-400">Attendee Login</a>
+                    <a href="#register" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full">Register Now</a>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+                <button id="mobile-menu-button" class="md:hidden"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
             </nav>
-            <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
                 <a href="#home" class="block py-2 hover:text-cyan-400">Home</a>
                 <a href="#about" class="block py-2 hover:text-cyan-400">About</a>
@@ -64,405 +54,224 @@
                 <a href="#sponsors" class="block py-2 hover:text-cyan-400">Sponsors</a>
                 <a href="#education" class="block py-2 hover:text-cyan-400">Education</a>
                 <a href="#login" class="block py-2 hover:text-cyan-400">Attendee Login</a>
-                <a href="#register" class="block mt-2 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">Register Now</a>
+                <a href="#register" class="block mt-2 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full text-center">Register Now</a>
             </div>
         </header>
 
-        <!-- Main Content: This is where pages will be rendered -->
-        <main id="main-content" class="container mx-auto px-6 py-12 flex-grow">
-            <!-- Content will be injected by JavaScript -->
-        </main>
+        <!-- Main Content -->
+        <main id="main-content" class="container mx-auto px-6 py-12 flex-grow"></main>
 
         <!-- Footer -->
         <footer class="bg-gray-800/50">
             <div class="container mx-auto px-6 py-8 text-center text-gray-400">
-                <div class="flex justify-center space-x-6 mb-4">
-                    <a href="#" class="hover:text-white">Twitter</a>
-                    <a href="#" class="hover:text-white">LinkedIn</a>
-                    <a href="#" class="hover:text-white">GitHub</a>
-                </div>
                 <p>&copy; 2025 Thai SynBio Grand Challenge. All rights reserved.</p>
-                <p class="text-sm mt-2">Hosted on GitHub Pages</p>
             </div>
         </footer>
-
     </div>
 
     <!-- Page Templates -->
     <template id="home-page">
         <div class="hero-bg rounded-lg p-8 md:p-16 text-center animate-fade-in">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Thai SynBio Grand Challenge 2025</h1>
-            <p class="text-lg md:text-2xl text-cyan-300 mb-8 max-w-3xl mx-auto">Innovating for a More Sustainable Future: A National Challenge in Synthetic Biology</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Thai SynBio Grand Challenge 2025</h1>
+            <p class="text-lg md:text-2xl text-cyan-300 mb-8">Innovating for a More Sustainable Future</p>
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                 <a href="#register" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 inline-block">Join the Challenge</a>
-                 <a href="#login" class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 inline-block">Attendee Login</a>
+                 <a href="#register" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full">Join the Challenge</a>
+                 <a href="#login" class="w-full sm:w-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full">Attendee Login</a>
             </div>
         </div>
-        <div class="mt-16 text-center">
-             <h2 class="text-3xl font-bold mb-2">The Future is Engineered with Biology</h2>
-             <p class="max-w-4xl mx-auto text-gray-300">Join researchers, students, and innovators from across Thailand to address pressing national health challenges using the power of synthetic biology. Together, we can design and build novel biological systems to create a more sustainable future for all.</p>
-        </div>
     </template>
-
     <template id="about-page">
-        <div class="animate-fade-in">
-            <h1 class="text-4xl font-bold text-center mb-12">About the Challenge</h1>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold text-cyan-400 mb-4">Our Mission</h2>
-                    <p class="text-gray-300 mb-4">
-                        The Thai SynBio Grand Challenge is a national initiative to catalyze innovation in synthetic biology to solve Thailand's most critical health and environmental problems. We aim to foster collaboration, cultivate talent, and accelerate the transition of cutting-edge research from the lab to real-world impact.
-                    </p>
-                     <p class="text-gray-300">
-                        This competition invites multidisciplinary teams to design, build, and test novel biological circuits and systems. We believe that by bringing together the brightest minds, we can unlock the potential of synthetic biology to create a better tomorrow.
-                    </p>
-                </div>
-                <div class="glassmorphism p-8 rounded-lg">
-                     <img src="https://placehold.co/500x300/1a202c/ffffff?text=Thai+SynBio+Lab" alt="Synthetic Biology Lab" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/500x300/1a202c/ffffff?text=Image+Error';">
-                </div>
-            </div>
-        </div>
+        <div class="animate-fade-in"><h1 class="text-4xl font-bold text-center mb-12">About the Challenge</h1></div>
     </template>
-    
     <template id="timeline-page">
         <div class="animate-fade-in">
             <h1 class="text-4xl font-bold text-center mb-12">Competition Timeline</h1>
-            <div class="max-w-2xl mx-auto">
-                <div class="relative border-l-2 border-cyan-500 pl-6">
-                    <!-- Timeline Items -->
-                    <div class="mb-10 relative">
-                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
-                        <p class="font-bold text-lg text-cyan-300">Now – 20 July 2025</p>
-                        <p class="text-xl font-semibold">Team Registration</p>
-                        <p class="text-gray-400">First come, first served.</p>
-                    </div>
-                     <div class="mb-10 relative">
-                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
-                        <p class="font-bold text-lg text-cyan-300">25 July 2025</p>
-                        <p class="text-xl font-semibold">Selected Teams Announced</p>
-                    </div>
-                     <div class="mb-10 relative">
-                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
-                        <p class="font-bold text-lg text-cyan-300">1 – 31 August 2025</p>
-                        <p class="text-xl font-semibold">Design Phase + Educational Workshops</p>
-                    </div>
-                    <div class="mb-10 relative">
-                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
-                        <p class="font-bold text-lg text-cyan-300">31 August 2025</p>
-                        <p class="text-xl font-semibold">Submission Deadline (coding sequence)</p>
-                    </div>
-                     <div class="mb-10 relative">
-                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
-                        <p class="font-bold text-lg text-cyan-300">1 Sept – 31 Oct 2025</p>
-                        <p class="text-xl font-semibold">DNA synthesis, expression, and testing by SIAT Biofoundry</p>
-                    </div>
-                    <div class="mb-10 relative">
-                        <div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div>
-                        <p class="font-bold text-lg text-cyan-300">11 November 2025</p>
-                        <p class="text-xl font-semibold">SynBio Consortium Day: Showcase & Judging</p>
-                    </div>
-                </div>
+            <div class="max-w-2xl mx-auto relative border-l-2 border-cyan-500 pl-6">
+                <div class="mb-10 relative"><div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div><p class="font-bold text-lg text-cyan-300">Now – 20 July 2025</p><p class="text-xl font-semibold">Team Registration</p><p class="text-gray-400">First come, first served.</p></div>
+                <div class="mb-10 relative"><div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div><p class="font-bold text-lg text-cyan-300">25 July 2025</p><p class="text-xl font-semibold">Selected Teams Announced</p></div>
+                <div class="mb-10 relative"><div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div><p class="font-bold text-lg text-cyan-300">1 – 31 August 2025</p><p class="text-xl font-semibold">Design Phase + Educational Workshops</p></div>
+                <div class="mb-10 relative"><div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div><p class="font-bold text-lg text-cyan-300">31 August 2025</p><p class="text-xl font-semibold">Submission Deadline (coding sequence)</p></div>
+                <div class="mb-10 relative"><div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div><p class="font-bold text-lg text-cyan-300">1 Sept – 31 Oct 2025</p><p class="text-xl font-semibold">DNA synthesis, expression, and testing by SIAT Biofoundry</p></div>
+                <div class="mb-10 relative"><div class="absolute -left-[34px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-900"></div><p class="font-bold text-lg text-cyan-300">11 November 2025</p><p class="text-xl font-semibold">SynBio Consortium Day: Showcase & Judging</p></div>
             </div>
         </div>
     </template>
-
     <template id="sponsors-page">
-         <div class="animate-fade-in text-center">
-            <h1 class="text-4xl font-bold mb-12">Our Valued Sponsors</h1>
-            <p class="max-w-3xl mx-auto text-gray-300 mb-12">This event is made possible by the generous support of our sponsors, who are committed to advancing science and technology in Thailand.</p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+1" alt="Sponsor 1" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+1';"></div>
-                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+2" alt="Sponsor 2" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+2';"></div>
-                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+3" alt="Sponsor 3" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+3';"></div>
-                <div class="glassmorphism p-6 rounded-lg"><img src="https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+4" alt="Sponsor 4" class="mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/ffffff/1a202c?text=Sponsor+4';"></div>
-            </div>
-        </div>
+        <div class="animate-fade-in text-center"><h1 class="text-4xl font-bold mb-12">Our Valued Sponsors</h1></div>
     </template>
-
     <template id="education-page">
-        <div class="animate-fade-in">
-            <h1 class="text-4xl font-bold text-center mb-12">Educational Resources</h1>
-            <p class="max-w-3xl mx-auto text-center text-gray-300 mb-16">
-                Welcome to the resource hub for the Thai SynBio Grand Challenge. Here you'll find materials to help your team design, build, and test your project.
-            </p>
-    
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1: Intro to SynBio -->
-                <div class="glassmorphism p-6 rounded-lg flex flex-col">
-                    <h3 class="text-xl font-bold text-cyan-400 mb-3">Introduction to Synthetic Biology</h3>
-                    <p class="text-gray-300 mb-4 flex-grow">
-                        New to synthetic biology? Start here with foundational concepts, key principles, and the history of the field.
-                    </p>
-                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">View Resources</a>
-                </div>
-    
-                <!-- Card 2: Workshops -->
-                <div class="glassmorphism p-6 rounded-lg flex flex-col">
-                    <h3 class="text-xl font-bold text-cyan-400 mb-3">Workshop Materials</h3>
-                    <p class="text-gray-300 mb-4 flex-grow">
-                        Access slides, recordings, and code from our educational workshops covering topics from DNA design to metabolic engineering.
-                    </p>
-                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">Access Materials</a>
-                </div>
-    
-                <!-- Card 3: Protocols -->
-                <div class="glassmorphism p-6 rounded-lg flex flex-col">
-                    <h3 class="text-xl font-bold text-cyan-400 mb-3">Lab Protocols & Guides</h3>
-                    <p class="text-gray-300 mb-4 flex-grow">
-                        Standard protocols for DNA assembly, transformations, and measurement procedures provided by the SIAT Biofoundry.
-                    </p>
-                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">View Protocols</a>
-                </div>
-                
-                <!-- Card 4: Design Tools -->
-                <div class="glassmorphism p-6 rounded-lg flex flex-col">
-                    <h3 class="text-xl font-bold text-cyan-400 mb-3">DNA Design Tools</h3>
-                    <p class="text-gray-300 mb-4 flex-grow">
-                        A curated list of recommended software for designing your genetic circuits, from simple plasmid editors to advanced pathway modelers.
-                    </p>
-                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">Explore Tools</a>
-                </div>
-    
-                <!-- Card 5: Biofoundry Info -->
-                <div class="glassmorphism p-6 rounded-lg flex flex-col">
-                    <h3 class="text-xl font-bold text-cyan-400 mb-3">SIAT Biofoundry Guide</h3>
-                    <p class="text-gray-300 mb-4 flex-grow">
-                        Everything you need to know about submitting your designs for synthesis and testing at the SIAT Biofoundry.
-                    </p>
-                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">Read Guide</a>
-                </div>
-    
-                <!-- Card 6: External Links -->
-                <div class="glassmorphism p-6 rounded-lg flex flex-col">
-                    <h3 class="text-xl font-bold text-cyan-400 mb-3">Useful Links</h3>
-                    <p class="text-gray-300 mb-4 flex-grow">
-                        A collection of external links to helpful resources like part registries, research papers, and other SynBio competitions.
-                    </p>
-                    <a href="#" class="mt-auto bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition-colors text-center">See Links</a>
-                </div>
-            </div>
-        </div>
+        <div class="animate-fade-in"><h1 class="text-4xl font-bold text-center mb-12">Educational Resources</h1></div>
     </template>
-
     <template id="register-page">
         <div class="max-w-lg mx-auto glassmorphism p-8 rounded-lg animate-fade-in">
             <h1 class="text-3xl font-bold text-center mb-6">Register for the Challenge</h1>
-            <form id="registration-form" novalidate>
-                <div class="mb-4">
-                    <label for="team-name" class="block mb-2 text-sm font-medium">Team Name</label>
-                    <input type="text" id="team-name" name="teamName" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-cyan-500 focus:border-cyan-500" required>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block mb-2 text-sm font-medium">Contact Email</label>
-                    <input type="email" id="email" name="email" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-cyan-500 focus:border-cyan-500" required>
-                </div>
-                 <div class="mb-4">
-                    <label for="affiliation" class="block mb-2 text-sm font-medium">University / Institution</label>
-                    <input type="text" id="affiliation" name="affiliation" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-cyan-500 focus:border-cyan-500" required>
-                </div>
-                <div class="mb-6">
-                    <label for="password" class="block mb-2 text-sm font-medium">Create Password</label>
-                    <input type="password" id="password" name="password" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-cyan-500 focus:border-cyan-500" required>
-                </div>
-                <button type="submit" id="register-button" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded-lg transition-colors">Register Team</button>
+            <form id="registration-form">
+                <div class="mb-4"><label for="team-name" class="block mb-2">Team Name</label><input type="text" id="team-name" class="w-full bg-gray-700 p-2.5 rounded-lg" required></div>
+                <div class="mb-4"><label for="affiliation" class="block mb-2">University / Institution</label><input type="text" id="affiliation" class="w-full bg-gray-700 p-2.5 rounded-lg" required></div>
+                <div class="mb-4"><label for="email" class="block mb-2">Contact Email</label><input type="email" id="email" class="w-full bg-gray-700 p-2.5 rounded-lg" required></div>
+                <div class="mb-6"><label for="password" class="block mb-2">Create Password</label><input type="password" id="password" class="w-full bg-gray-700 p-2.5 rounded-lg" required></div>
+                <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 font-bold py-3 rounded-lg">Register Team</button>
             </form>
-            <p id="registration-message" class="text-center mt-4"></p>
+            <p id="form-message" class="text-center mt-4"></p>
         </div>
     </template>
-
     <template id="login-page">
         <div class="max-w-md mx-auto glassmorphism p-8 rounded-lg animate-fade-in">
             <h1 class="text-3xl font-bold text-center mb-6">Attendee Login</h1>
             <form id="login-form">
-                <div class="mb-4">
-                    <label for="login-email" class="block mb-2 text-sm font-medium">Email</label>
-                    <input type="email" id="login-email" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-cyan-500 focus:border-cyan-500" required>
-                </div>
-                <div class="mb-6">
-                    <label for="login-password" class="block mb-2 text-sm font-medium">Password</label>
-                    <input type="password" id="login-password" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-2.5 focus:ring-cyan-500 focus:border-cyan-500" required>
-                </div>
-                <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded-lg transition-colors">Log In</button>
+                <div class="mb-4"><label for="login-email" class="block mb-2">Email</label><input type="email" id="login-email" class="w-full bg-gray-700 p-2.5 rounded-lg" required></div>
+                <div class="mb-6"><label for="login-password" class="block mb-2">Password</label><input type="password" id="login-password" class="w-full bg-gray-700 p-2.5 rounded-lg" required></div>
+                <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 font-bold py-3 rounded-lg">Log In</button>
             </form>
-            <p id="login-message" class="text-center mt-4 text-red-400"></p>
+            <p id="form-message" class="text-center mt-4 text-red-400"></p>
         </div>
     </template>
-    
     <template id="upload-page">
         <div class="max-w-2xl mx-auto glassmorphism p-8 rounded-lg animate-fade-in">
             <div class="flex justify-between items-center mb-6">
                 <h1 class="text-3xl font-bold">Upload Sequences</h1>
-                <button id="logout-button" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition-colors">Logout</button>
+                <button id="logout-button" class="bg-red-500 hover:bg-red-600 font-bold py-2 px-4 rounded-full">Logout</button>
             </div>
-            <p class="mb-4 text-gray-300">Welcome, <span id="user-team-name" class="font-bold text-cyan-300"></span>! Upload your sequences in FASTA format.</p>
-            
-            <div id="drop-zone" class="border-2 border-dashed border-gray-500 rounded-lg p-10 text-center cursor-pointer hover:border-cyan-400 hover:bg-gray-800/50 transition-colors">
-                 <p class="text-gray-400">Drag & drop your .fasta file here, or click to select a file.</p>
+            <p class="mb-4">Welcome, <span id="user-team-name" class="font-bold text-cyan-300"></span>!</p>
+            <div id="drop-zone" class="border-2 border-dashed rounded-lg p-10 text-center cursor-pointer hover:border-cyan-400">
+                 <p>Drag & drop your .fasta file here, or click to select a file.</p>
                  <input type="file" id="file-input" class="hidden" accept=".fasta,.fa">
             </div>
-            <div id="file-info" class="mt-4 text-center"></div>
-            <div id="upload-progress-container" class="w-full bg-gray-700 rounded-full h-2.5 mt-4 hidden">
-                <div id="upload-progress-bar" class="bg-cyan-500 h-2.5 rounded-full" style="width: 0%"></div>
-            </div>
-            <button id="upload-button" class="w-full mt-6 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded-lg transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed" disabled>Upload File</button>
+            <p id="file-info" class="mt-4 text-center"></p>
+            <button id="upload-button" class="w-full mt-6 bg-cyan-500 hover:bg-cyan-600 font-bold py-3 rounded-lg disabled:bg-gray-600" disabled>Upload File</button>
             <p id="upload-message" class="text-center mt-4"></p>
         </div>
     </template>
 
+    <!-- Import Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-storage-compat.js"></script>
+
     <script>
-        // --- Google Sheets & Drive Integration ---
-        /*
-            // FINAL UNIFIED GOOGLE APPS SCRIPT - Now with Plain Text Password
-            // WARNING: Storing plain text passwords is a major security risk. 
-            // This is for demonstration purposes only. Do not use in production.
-            function doPost(e) {
-              var lock = LockService.getScriptLock();
-              lock.waitLock(30000); 
-              
-              try {
-                var payload = JSON.parse(e.postData.contents);
+        // --- YOUR FIREBASE CONFIGURATION OBJECT ---
+        const firebaseConfig = {
+            apiKey: "AIzaSyATIRGjOJaVaO1gFDYTNxdtIjKVjWbuw1A",
+            authDomain: "thaisynbiogc.firebaseapp.com",
+            projectId: "thaisynbiogc",
+            storageBucket: "thaisynbiogc.appspot.com", // Corrected for compatibility
+            messagingSenderId: "1027958846508",
+            appId: "1:1027958846508:web:246300c008a6c361c68d89",
+            measurementId: "G-CSSDRNHLZT"
+        };
+        // ---------------------------------------------------------
 
-                if (payload.action === "upload") {
-                    // --- File Upload Logic ---
-                    var fileData = Utilities.base64Decode(payload.file.split(',')[1]);
-                    var blob = Utilities.newBlob(fileData, payload.mimeType, payload.fileName);
-                    
-                    var folder = DriveApp.getFolderById("1o2QFA-HzSQ6dALl8_4ZX1h2ucmsm49_v");
-                    var file = folder.createFile(blob);
-                    
-                    return ContentService
-                      .createTextOutput(JSON.stringify({ "result": "success", "fileUrl": file.getUrl() }))
-                      .setMimeType(ContentService.MimeType.JSON);
-
-                } else if (payload.action === "register") {
-                    // --- Registration Logic ---
-                    var doc = SpreadsheetApp.openById("1nUrADjz3L3jKRrZy-4fKls15DcdbwB0Qy69MpKH24v8");
-                    var sheetName = "Registrations";
-                    var sheet = doc.getSheetByName(sheetName);
-                    
-                    if (!sheet) {
-                      sheet = doc.insertSheet(sheetName);
-                      // Added "Plain Text Password" column header
-                      sheet.appendRow(["Timestamp", "teamName", "email", "affiliation", "passwordHash", "Plain Text Password"]);
-                    }
-                    
-                    // Added payload.plainTextPassword to the new row
-                    var newRow = [new Date(), payload.teamName, payload.email, payload.affiliation, payload.passwordHash, payload.plainTextPassword];
-                    sheet.appendRow(newRow);
-
-                    // --- Send Confirmation Email ---
-                    var userEmail = payload.email;
-                    var teamName = payload.teamName;
-                    var subject = "Registration Confirmation - Thai SynBio Grand Challenge 2025";
-                    var loginUrl = "https://coelicolor.github.io/SynBio/#login"; 
-                    
-                    var body = "Dear " + teamName + ",\n\n" +
-                               "Thank you for registering for the Thai SynBio Grand Challenge 2025!\n\n" +
-                               "Your registration has been confirmed.\n\n" +
-                               "You can now log in to the attendee portal to upload your sequences:\n" +
-                               loginUrl + "\n\n" +
-                               "We look forward to your participation.\n\n" +
-                               "Sincerely,\n" +
-                               "The Thai SynBio Grand Challenge Team";
-
-                    MailApp.sendEmail(userEmail, subject, body);
-                    
-                    return ContentService
-                      .createTextOutput(JSON.stringify({ "result": "success" }))
-                      .setMimeType(ContentService.MimeType.JSON);
-                } else {
-                  throw new Error("Invalid action specified in payload.");
-                }
-
-              } catch (err) {
-                return ContentService
-                  .createTextOutput(JSON.stringify({ "result": "error", "error": { "message": err.message, "stack": err.stack } }))
-                  .setMimeType(ContentService.MimeType.JSON);
-              } finally {
-                lock.releaseLock();
-              }
-            }
-        */
-
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwvyFD-vJXGMgkuCT37wLOIPdEAhYbDFOPYT0nkisspzZPyimhzNz1-0j-yvdJdBsJj9A/exec';
+        // --- Initialize Firebase ---
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const storage = firebase.storage();
 
         // --- SPA (Single Page Application) Logic ---
         const mainContent = document.getElementById('main-content');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        function navigateTo(page) {
-            window.location.hash = page;
-        }
-
         function renderPage(page) {
-            // Close mobile menu on navigation
             mobileMenu.classList.add('hidden');
-            
             mainContent.innerHTML = '';
-            let templateId = `${page}-page`;
-            const template = document.getElementById(templateId);
-            
+            const template = document.getElementById(`${page}-page`);
             if (template) {
                 mainContent.appendChild(template.content.cloneNode(true));
                 addEventListenersForPage(page);
             } else {
-                 // Fallback to home page if template not found
-                 mainContent.appendChild(document.getElementById('home-page').content.cloneNode(true));
-                 addEventListenersForPage('home');
+                mainContent.appendChild(document.getElementById('home-page').content.cloneNode(true));
             }
         }
         
-        // Listen for hash changes to navigate
-        window.addEventListener('hashchange', () => {
+        function handleNavigation() {
             const page = window.location.hash.substring(1) || 'home';
             renderPage(page);
+        }
+
+        window.addEventListener('hashchange', handleNavigation);
+        document.getElementById('mobile-menu-button').addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // Listen for Authentication State Changes
+        auth.onAuthStateChanged(user => {
+            handleNavigation(); // Re-render the page on auth state change
         });
 
         function addEventListenersForPage(page) {
-             if (page === 'register') {
+            if (page === 'register') {
                 document.getElementById('registration-form').addEventListener('submit', handleRegistration);
             } else if (page === 'login') {
                 document.getElementById('login-form').addEventListener('submit', handleLogin);
             } else if (page === 'upload') {
-                setupUploadPage();
+                if (auth.currentUser) {
+                    setupUploadPage(auth.currentUser);
+                } else {
+                    window.location.hash = 'login'; // Redirect if not logged in
+                }
             }
         }
-        
-        let currentUser = null;
 
-        function handleLogin(event) {
-            event.preventDefault();
+        // --- Firebase Authentication and Database Logic ---
+
+        async function handleRegistration(e) {
+            e.preventDefault();
+            const teamName = document.getElementById('team-name').value;
+            const affiliation = document.getElementById('affiliation').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const messageEl = document.getElementById('form-message');
+            messageEl.textContent = 'Registering...';
+
+            try {
+                // Step 1: Create the user in Firebase Auth
+                const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+                const user = userCredential.user;
+
+                // Step 2: Save additional user info to Firestore
+                await db.collection('users').doc(user.uid).set({
+                    teamName: teamName,
+                    affiliation: affiliation,
+                    email: email,
+                });
+                
+                // Step 3: Send verification email
+                await user.sendEmailVerification();
+
+                messageEl.textContent = 'Registration successful! Please check your email to verify your account.';
+                messageEl.className = 'text-center mt-4 text-green-400';
+                e.target.reset();
+
+            } catch (error) {
+                messageEl.textContent = `Error: ${error.message}`;
+                messageEl.className = 'text-center mt-4 text-red-400';
+            }
+        }
+
+        async function handleLogin(e) {
+            e.preventDefault();
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
-            const messageEl = document.getElementById('login-message');
+            const messageEl = document.getElementById('form-message');
+            messageEl.textContent = 'Logging in...';
 
-            const storedUser = localStorage.getItem(`user_${email}`);
+            try {
+                await auth.signInWithEmailAndPassword(email, password);
+                window.location.hash = 'upload'; // Navigate to upload page on successful login
+            } catch (error) {
+                messageEl.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        async function handleLogout() {
+            await auth.signOut();
+            window.location.hash = 'home'; // Navigate to home after logout
+        }
+        
+        async function setupUploadPage(user) {
+            const userDoc = await db.collection('users').doc(user.uid).get();
+            const userData = userDoc.data();
             
-            if (storedUser) {
-                const userData = JSON.parse(storedUser);
-                if (userData.password === password) {
-                    currentUser = userData;
-                    navigateTo('upload');
-                } else {
-                    messageEl.textContent = "Invalid password.";
-                }
-            } else {
-                messageEl.textContent = "No user found with that email. Please register first.";
-            }
-        }
-
-        function handleLogout() {
-            currentUser = null;
-            navigateTo('home');
-        }
-
-        // --- UPLOAD PAGE LOGIC ---
-        function setupUploadPage() {
-            if (!currentUser) {
-                navigateTo('login');
-                return;
-            }
-            document.getElementById('user-team-name').textContent = currentUser.teamName;
+            document.getElementById('user-team-name').textContent = userData.teamName;
             document.getElementById('logout-button').addEventListener('click', handleLogout);
 
             const dropZone = document.getElementById('drop-zone');
@@ -471,20 +280,20 @@
             const uploadButton = document.getElementById('upload-button');
             let selectedFile = null;
 
-            dropZone.addEventListener('click', () => fileInput.click());
-            dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('border-cyan-400', 'bg-gray-800/50'); });
-            dropZone.addEventListener('dragleave', () => { dropZone.classList.remove('border-cyan-400', 'bg-gray-800/50'); });
-            dropZone.addEventListener('drop', (e) => {
+            dropZone.onclick = () => fileInput.click();
+            dropZone.ondragover = (e) => { e.preventDefault(); dropZone.classList.add('border-cyan-400'); };
+            dropZone.ondragleave = () => dropZone.classList.remove('border-cyan-400');
+            dropZone.ondrop = (e) => {
                 e.preventDefault();
-                dropZone.classList.remove('border-cyan-400', 'bg-gray-800/50');
+                dropZone.classList.remove('border-cyan-400');
                 if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
-            });
-            fileInput.addEventListener('change', (e) => { if(e.target.files.length) handleFile(e.target.files[0]); });
+            };
+            fileInput.onchange = (e) => { if(e.target.files.length) handleFile(e.target.files[0]); };
 
             function handleFile(file) {
                  if(file && file.name.match(/\.(fasta|fa)$/i)) {
                     selectedFile = file;
-                    fileInfo.textContent = `File selected: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+                    fileInfo.textContent = `File selected: ${file.name}`;
                     uploadButton.disabled = false;
                  } else {
                     selectedFile = null;
@@ -493,124 +302,43 @@
                  }
             }
             
-            uploadButton.addEventListener('click', () => {
+            uploadButton.onclick = () => {
                 if (selectedFile) {
-                    handleFileUpload(selectedFile);
+                    handleFileUpload(selectedFile, user);
                 }
-            });
+            };
         }
-        
-        function handleFileUpload(file) {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = async (event) => {
-                const fileData = event.target.result;
-                const payload = {
-                    action: "upload",
-                    fileName: file.name,
-                    mimeType: file.type,
-                    file: fileData
-                };
 
-                const uploadButton = document.getElementById('upload-button');
-                const uploadMessage = document.getElementById('upload-message');
-                uploadButton.disabled = true;
-                uploadButton.textContent = "Uploading...";
-                uploadMessage.className = 'text-center mt-4';
-                uploadMessage.textContent = 'Please wait, uploading file...';
+        function handleFileUpload(file, user) {
+            const uploadMessage = document.getElementById('upload-message');
+            const uploadButton = document.getElementById('upload-button');
+            const filePath = `uploads/${user.uid}/${file.name}`;
+            const uploadTask = storage.ref(filePath).put(file);
 
-                try {
-                    const response = await fetch(GOOGLE_SCRIPT_URL, {
-                        method: 'POST',
-                        body: JSON.stringify(payload)
-                    });
-
-                    const result = await response.json();
-
-                    if (result.result === 'success') {
-                        uploadMessage.innerHTML = `File uploaded successfully! <a href="${result.fileUrl}" target="_blank" class="text-cyan-400 hover:underline">View File</a>`;
-                        uploadMessage.classList.add('text-green-400');
-                    } else {
-                        throw new Error(result.error.message || 'Unknown error during upload.');
-                    }
-
-                } catch (error) {
+            uploadTask.on('state_changed', 
+                (snapshot) => {
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    uploadMessage.textContent = `Upload is ${progress.toFixed(0)}% done`;
+                    uploadButton.disabled = true;
+                    uploadButton.textContent = "Uploading...";
+                }, 
+                (error) => {
                     uploadMessage.textContent = `Upload failed: ${error.message}`;
-                    uploadMessage.classList.add('text-red-400');
-                } finally {
+                    uploadMessage.className = 'text-center mt-4 text-red-400';
                     uploadButton.disabled = false;
                     uploadButton.textContent = "Upload File";
+                }, 
+                () => {
+                    uploadMessage.textContent = 'File uploaded successfully!';
+                    uploadMessage.className = 'text-center mt-4 text-green-400';
+                    uploadButton.disabled = true;
+                    uploadButton.textContent = "Uploaded";
                 }
-            };
+            );
         }
-        
-        // --- REGISTRATION LOGIC ---
-        async function handleRegistration(event) {
-            event.preventDefault();
-            const form = event.target;
-            const button = document.getElementById('register-button');
-            const messageEl = document.getElementById('registration-message');
 
-            button.disabled = true;
-            button.textContent = 'Submitting...';
-            messageEl.className = 'text-center mt-4';
-
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-
-            const payload = {
-                action: "register",
-                teamName: data.teamName,
-                email: data.email,
-                affiliation: data.affiliation,
-                passwordHash: btoa(data.password),
-                plainTextPassword: data.password // Sending the plain password
-            };
-            
-            try {
-                const response = await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify(payload), 
-                });
-                
-                const result = await response.json();
-
-                if (result.result === 'success') {
-                    messageEl.textContent = 'Registration successful! A confirmation email has been sent.';
-                    messageEl.classList.add('text-green-400');
-                    
-                    const userDataForStorage = {
-                        teamName: data.teamName,
-                        email: data.email,
-                        affiliation: data.affiliation,
-                        password: data.password 
-                    };
-                    localStorage.setItem(`user_${data.email}`, JSON.stringify(userDataForStorage));
-                    form.reset();
-                } else {
-                    const errorDetail = (typeof result.error === 'object' && result.error !== null) 
-                        ? result.error.message || JSON.stringify(result.error) 
-                        : result.error;
-                    throw new Error(errorDetail || 'An unknown error occurred from the server.');
-                }
-            } catch (error) {
-                 messageEl.textContent = `Registration failed: ${error.message}. Please check console for details.`;
-                 messageEl.classList.add('text-red-400');
-                 console.error("Registration Error:", error);
-            } finally {
-                button.disabled = false;
-                button.textContent = 'Register Team';
-            }
-        }
-        
-        // --- INITIALIZATION ---
-        // Initial page load based on URL hash
-        const initialPage = window.location.hash.substring(1) || 'home';
-        renderPage(initialPage);
-        
-        document.getElementById('mobile-menu-button').addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        // Initial Load
+        handleNavigation();
 
     </script>
 </body>
